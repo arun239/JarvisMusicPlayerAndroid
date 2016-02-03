@@ -9,23 +9,22 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.future.jarvismusicplayerapp.MainActivity"
+    tools:context=".activities.LoginActivity"
     tools:showIn="@layout/activity_main">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jarvis"
+        android:text="@string/jarvis_title"
         android:textColor="#a25f5f"
         android:visibility="visible"
         android:textStyle="bold"
         android:textSize="@dimen/abc_action_button_min_height_material"
         android:textAlignment="center"
         android:id="@+id/Jarvis"
-        android:paddingLeft="100dp"
-
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp" />
 
 
     <EditText
@@ -51,7 +50,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome"
+        android:text="@string/jarvis_signIn"
         android:id="@+id/welcome"
         android:layout_below="@+id/useremail"
         android:layout_centerHorizontal="true"

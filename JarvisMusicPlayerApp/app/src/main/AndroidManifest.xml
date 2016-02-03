@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.future.jarvismusicplayerapp">
 
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.HomePageActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,12 +22,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SongUpload"
+            android:name=".activities.SongUpload"
             android:label="@string/title_activity_song_upload"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".HomePageActivity"
-            android:label="@string/title_activity_home_page"
+            android:name=".activities.LoginActivity"
+            android:label="@string/title_login_activity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

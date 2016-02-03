@@ -9,27 +9,29 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.future.jarvismusicplayerapp.HomePageActivity"
+    tools:context=".activities.HomePageActivity"
     tools:showIn="@layout/activity_home_page">
 
     <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textAppearance="?android:attr/textAppearanceLarge"
-    android:text="Username"
-    android:id="@+id/textView"
-    android:layout_alignParentTop="true"
-    android:layout_centerHorizontal="true"
-    android:paddingTop="10dp"
+    android:text="@string/user_name_text"
+    android:id="@+id/usernameText"
+        android:paddingTop="10dp"
     android:paddingBottom="10dp"
-    android:textSize="@dimen/abc_action_bar_progress_bar_size" />
+    android:textSize="@dimen/abc_action_bar_progress_bar_size"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Playlist"
-        android:id="@+id/button"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material" />
+        android:text="@string/add_playlist_button"
+        android:id="@+id/add_playlist"
+        android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material"
+        android:layout_alignTop="@+id/usernameText"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
