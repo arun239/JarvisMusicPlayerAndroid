@@ -2,7 +2,6 @@ package com.future.jarvismusicplayerapp.workers;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -17,14 +16,14 @@ import com.future.jarvismusicplayerapp.Constants;
  */
 public class RestHelper {
 
-   public void sendData(final String jsonData, final Context context) {
+   public void sendData(final String jsonData, final Context context, final RestResponseInterface restResponseInterface) {
         String url = Constants.BASE_URL + Constants.USER_REGISTRATION_END_POINT;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.d(Constants.TAG, "Volley Received response: ");
                 Log.d(Constants.TAG, response);
-                Toast.makeText(context,"User Registration Completed.", Toast.LENGTH_LONG).show();
+                restResponseInterface.responseReceived(RestResponseInterface.SUCCESS);
             }
 
         },new Response.ErrorListener() {
@@ -33,7 +32,7 @@ public class RestHelper {
                 Log.e(Constants.TAG, "Error while calling the API.");
                 Log.e(Constants.TAG, "Json Data Sent : " + jsonData);
                 Log.e(Constants.TAG, error.toString());
-                Toast.makeText(context, "Error while registering user.", Toast.LENGTH_LONG).show();
+                restResponseInterface.responseReceived(RestResponseInterface.FAILURE);
             }
         }) {
             @Override

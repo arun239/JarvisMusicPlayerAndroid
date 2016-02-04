@@ -7,11 +7,11 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.util.Patterns;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -23,6 +23,7 @@ import com.future.jarvismusicplayerapp.R;
 import com.future.jarvismusicplayerapp.pojo.UserRegistrationPojo;
 import com.future.jarvismusicplayerapp.utils.Utility;
 import com.future.jarvismusicplayerapp.workers.RestHelper;
+import com.future.jarvismusicplayerapp.workers.RestResponseInterface;
 
 import java.util.regex.Pattern;
 
@@ -30,6 +31,8 @@ import java.util.regex.Pattern;
 public class LoginActivity extends AppCompatActivity {
     private EditText etUserName;
     private EditText etUserEmail;
+    private String enteredUserName;
+    private String enteredUserEmail;
     private final RestHelper restHelper = new RestHelper();
 
     @Override
@@ -71,8 +74,8 @@ public class LoginActivity extends AppCompatActivity {
     public void welcomeButtonClicked() {
         Log.i(Constants.TAG,"onClick");
 
-        String enteredUserName = this.etUserName.getText().toString();
-        String enteredUserEmail = this.etUserEmail.getText().toString();
+         this.enteredUserName = this.etUserName.getText().toString();
+         this.enteredUserEmail = this.etUserEmail.getText().toString();
 
         //Checks
         Context context = getBaseContext();
@@ -104,12 +107,34 @@ public class LoginActivity extends AppCompatActivity {
             // Take Necessary steps.
         }
 
-        this.restHelper.sendData(jsonData, getBaseContext());  //return analyze and takes steps
+        //this.restHelper.sendData(jsonData, getBaseContext());  //return analyze and takes steps
 
 
-        Utility.setUserName(getBaseContext(), enteredUserName);
-        Utility.setUserEmailId(getBaseContext(), enteredUserEmail);
-        finish();
+        //Anonymous inner Class -- Alternative - Create a concrete class which will implement interface and then object of that class
+        // will be used to call interface's function because we can't call interface's function directly
+
+        RestResponseInterface userRegistrationResponse = new RestResponseInterface() {
+            @Override
+            public void responseReceived(String responseCode) {
+                Log.i(Constants.TAG, "Response Received with code: " + responseCode);
+                switch (responseCode) {
+                    case RestResponseInterface.SUCCESS:
+                        Utility.setUserName(getBaseContext(), enteredUserName);
+                        Utility.setUserEmailId(getBaseContext(), enteredUserEmail);
+                        Toast.makeText(getBaseContext(),"User Registration Completed.", Toast.LENGTH_LONG).show();
+                        finish();
+                        break;
+                    case RestResponseInterface.FAILURE:
+                        Toast.makeText(getBaseContext(), "Error while registering user.", Toast.LENGTH_LONG).show();
+                        break;
+                    default:
+
+                }
+            }
+        };
+
+        this.restHelper.sendData(jsonData, getBaseContext(), userRegistrationResponse);
+
         //Close yourself
     }
 
