@@ -3,6 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_song_upload">Song Upload</string>
     <string name="title_login_activity">Login</string>
+    <string name="title_add_playlist_activity">Login</string>
     <string name="jarvis_title">Jarvis</string>
     <string name="jarvis_signIn">Welcome</string>
     <string name="preference_file_key">PreferenceFileKey</string>

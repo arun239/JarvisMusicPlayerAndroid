@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         this.etUserEmail = (EditText) findViewById(R.id.useremail);
 
 
-        final Button welcome = (Button) findViewById(R.id.welcome);
+        final Button btWelcome = (Button) findViewById(R.id.welcome);
 
         Pattern emailPattern = Patterns.EMAIL_ADDRESS; // API level 8+
         Account[] accounts = AccountManager.get(getBaseContext()).getAccountsByType("com.google");
@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
 
-        welcome.setOnClickListener(new View.OnClickListener() {
+        btWelcome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 welcomeButtonClicked();
@@ -122,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
                         Utility.setUserName(getBaseContext(), enteredUserName);
                         Utility.setUserEmailId(getBaseContext(), enteredUserEmail);
                         Toast.makeText(getBaseContext(),"User Registration Completed.", Toast.LENGTH_LONG).show();
-                        finish();
+                        finish();                 //Close Activity
                         break;
                     case RestResponseInterface.FAILURE:
                         Toast.makeText(getBaseContext(), "Error while registering user.", Toast.LENGTH_LONG).show();
@@ -133,9 +133,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
 
-        this.restHelper.sendData(jsonData, getBaseContext(), userRegistrationResponse);
+        this.restHelper.sendData(jsonData, getBaseContext(), userRegistrationResponse, Constants.USER_REGISTRATION_END_POINT);
 
-        //Close yourself
     }
 
 

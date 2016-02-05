@@ -29,6 +29,10 @@
             android:name=".activities.LoginActivity"
             android:label="@string/title_login_activity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".activities.AddPlaylist"
+            android:label="@string/title_add_playlist_activity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
