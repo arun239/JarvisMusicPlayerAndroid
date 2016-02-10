@@ -6,5 +6,6 @@ package com.future.jarvismusicplayerapp.workers;
 public interface RestResponseInterface {
     public String SUCCESS = "SUCCESS";
     public String FAILURE = "FAILURE";
-    public void responseReceived(String responseCode);
+    public void responseReceived(String responseCode, String data);
+
 }

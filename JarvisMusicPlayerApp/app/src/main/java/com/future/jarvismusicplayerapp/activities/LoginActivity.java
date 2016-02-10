@@ -115,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
 
         RestResponseInterface userRegistrationResponse = new RestResponseInterface() {
             @Override
-            public void responseReceived(String responseCode) {
+            public void responseReceived(String responseCode, String data) {
                 Log.i(Constants.TAG, "Response Received with code: " + responseCode);
                 switch (responseCode) {
                     case RestResponseInterface.SUCCESS:

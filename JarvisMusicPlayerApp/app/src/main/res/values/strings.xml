@@ -11,6 +11,8 @@
     <string name="user_name">UserName</string>
     <string name="empty_user_email">Please enter User Email</string>
     <string name="empty_user_name">Please enter User Name</string>
+    <string name="empty_playlist_description">Please enter Playlist description</string>
+    <string name="empty_playlist_name">Please enter Playlist Name</string>
     <string name="add_playlist_button">Add Playlist</string>
     <string name="user_name_text">Username</string>
 </resources>

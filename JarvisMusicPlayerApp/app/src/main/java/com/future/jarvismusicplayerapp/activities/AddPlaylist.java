@@ -61,13 +61,13 @@ public class AddPlaylist extends AppCompatActivity {
         if (enteredPlaylistName == null || enteredPlaylistName.length() == 0)
         {
 
-            String empty_playlist_name = context.getString(R.string.empty_user_email);
+            String empty_playlist_name = context.getString(R.string.empty_playlist_name);
             Toast.makeText(getBaseContext(), empty_playlist_name, Toast.LENGTH_LONG).show();
             return;
         }
         if (enteredPlaylistDescription == null || enteredPlaylistDescription.length() == 0)
         {
-            String empty_playlist_description = context.getString(R.string.empty_user_name);
+            String empty_playlist_description = context.getString(R.string.empty_playlist_name);
             Toast.makeText(getBaseContext(), empty_playlist_description, Toast.LENGTH_LONG).show();
             return;
         }
@@ -89,12 +89,13 @@ public class AddPlaylist extends AppCompatActivity {
 
         RestResponseInterface playlistAdditionResponse = new RestResponseInterface() {
             @Override
-            public void responseReceived(String responseCode) {
+            public void responseReceived(String responseCode, String data) {
                 Log.i(Constants.TAG, "Response Received with code: " + responseCode);
                 switch (responseCode) {
                     case RestResponseInterface.SUCCESS:
                         Toast.makeText(getBaseContext(),"Playlist Added Successfully.", Toast.LENGTH_LONG).show();
-                        finish();                 //Close Activity
+                        finish();
+                       // Toast.makeText(getBaseContext(),"Finish called.", Toast.LENGTH_LONG).show();
                         break;
                     case RestResponseInterface.FAILURE:
                         Toast.makeText(getBaseContext(), "Error while adding playlist.", Toast.LENGTH_LONG).show();
