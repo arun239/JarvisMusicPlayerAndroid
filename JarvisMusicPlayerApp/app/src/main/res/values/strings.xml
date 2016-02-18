@@ -15,4 +15,30 @@
     <string name="empty_playlist_name">Please enter Playlist Name</string>
     <string name="add_playlist_button">Add Playlist</string>
     <string name="user_name_text">Username</string>
+    <string name="title_activity_song_page">SongPageActivity</string>
+    <string name="playlist_name_text">Playlist Name</string>
+    <string name="upload_song_button">Upload Song</string>
+    <string name="title_activity_add_song">AddSongActivity</string>
+    <string name="song_name_text">Song Name</string>
+    <string name="song_language_text">Song Language</string>
+    <string name="song_genre_text">Song Genre</string>
+    <string name="file_browse_button">Browse</string>
+    <string name="song_upload_button">Upload</string>
+    <string name="file_name_text">file name</string>
+    <string name="playlist_description_text">Playlist Description</string>
+    <string-array name="language_array">
+        <item>Hindi</item>
+        <item>English</item>
+    </string-array>
+    <string-array name="Genre_array">
+        <item>Classical</item>
+        <item>Sufi</item>
+        <item>Devotional</item>
+        <item>Rock</item>
+        <item>Romance</item>
+        <item>Party</item>
+        <item>Retro</item>
+        <item>Pop</item>
+        <item>Workout</item>
+    </string-array>
 </resources>

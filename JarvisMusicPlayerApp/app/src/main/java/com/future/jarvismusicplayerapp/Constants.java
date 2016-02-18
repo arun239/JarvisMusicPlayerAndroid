@@ -5,7 +5,7 @@ package com.future.jarvismusicplayerapp;
  */
 public interface Constants {
     String TAG = "JarvisMusicPlayer";
-    String BASE_URL = "http://192.168.2.7:8080";
+    String BASE_URL = "http://192.168.2.2:8080";
     String USER_REGISTRATION_END_POINT = "/UserRegistration";
     String ADD_PlAYLIST = "/PlaylistAdd";
     String FETCH_PLAYLIST = "/FetchPlaylist";

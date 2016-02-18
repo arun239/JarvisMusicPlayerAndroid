@@ -22,17 +22,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.SongUpload"
-            android:label="@string/title_activity_song_upload"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".activities.LoginActivity"
             android:label="@string/title_login_activity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.AddPlaylist"
+            android:name=".activities.AddPlaylistActivity"
             android:label="@string/title_add_playlist_activity"
             android:noHistory="true"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.SongPageActivity"
+            android:label="@string/title_activity_song_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.UploadSongActivity"
+            android:label="@string/title_activity_add_song"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

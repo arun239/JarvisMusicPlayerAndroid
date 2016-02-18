@@ -22,7 +22,7 @@ import com.future.jarvismusicplayerapp.workers.RestResponseInterface;
 /**
  * Created by arungu on 2/5/2016.
  */
-public class AddPlaylist extends AppCompatActivity {
+public class AddPlaylistActivity extends AppCompatActivity {
 
     private EditText etPlaylistName;
     private EditText etPlaylistDescription;

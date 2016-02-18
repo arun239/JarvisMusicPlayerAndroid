@@ -1,9 +1,17 @@
 package com.future.jarvismusicplayerapp.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by arungu on 2/5/2016.
  */
 public class PlaylistAdditionPojo {
+
+    private String playlistName;
+    private String playlistDescription;
+    @JsonProperty("id")
+    private String playlistId;
 
     public PlaylistAdditionPojo() {
     }
@@ -13,8 +21,6 @@ public class PlaylistAdditionPojo {
         this.playlistDescription = playlistDescription;
     }
 
-    private String playlistName;
-    private String playlistDescription;
 
     public String getPlaylistName() {
         return playlistName;
@@ -30,5 +36,14 @@ public class PlaylistAdditionPojo {
 
     public void setPlaylistDescription(String playlistDescription) {
         this.playlistDescription = playlistDescription;
+    }
+
+    @JsonIgnore                                                                 //or we can remove Setter for Id as we don't want to initialize it
+    public String getPlaylistId() {
+        return playlistId;
+    }
+
+    public void setPlaylistId(String playlistId) {
+        this.playlistId = playlistId;
     }
 }
